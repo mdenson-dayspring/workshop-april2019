@@ -1,0 +1,28 @@
+{
+  "name": "workshop-apr2019",
+  "version": "1.0.0",
+  "description": "Sample code for the dev workshop.",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdenson-dayspring/workshop-april2019.git"
+  },
+  "scripts": {
+    "callbacks": "ts-node src/callbacks/index.ts",
+    "promises": "ts-node src/promises/index.ts",
+    "promises.watch": "onchange src/promises/*.ts -- ts-node src/promises/index.ts",
+    "observables": "ts-node src/observables/index.ts",
+    "observables.watch": "onchange src/observables/*.ts -- ts-node src/observables/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Denson <mdenson@dayspring-tech.com>",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.5.1"
+  },
+  "devDependencies": {
+    "onchange": "^5.2.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  }
+}
