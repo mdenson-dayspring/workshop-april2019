@@ -25,17 +25,26 @@ promisesSrv
   .then(auth => {
     if (auth) {
       return promisesSrv.getUser();
+    } else {
+      return Promise.reject('Unexpected error');
     }
   })
   .then(user => {
     console.log(user.name);
-  });
+  })
+  .catch(reason => console.log(reason));
 
 // const runAsync = async () => {
-//   const auth = await promisesSrv.checkAuth();
-//   if (auth) {
-//     const user = await promisesSrv.getUser();
-//     console.log(user.name);
+//   try {
+//     const auth = await promisesSrv.checkAuth();
+//     if (auth) {
+//       const user = await promisesSrv.getUser();
+//       console.log(user.name);
+//     } else {
+//       console.log('Unexpected error.');
+//     }
+//   } catch(reason) {
+//     console.log(reason);
 //   }
 // };
 // runAsync();
